@@ -43,6 +43,7 @@
                     $konekcija = new mysqli("localhost", "root", "", "potrazivanja");
                     include('modalDodaj.php');
                     include('Potrazivanje.php');
+                    include('modalIzmeni.php');
 
                     $upit = "select p.id, p.faktura, p.iznos, p.valuta, k.naziv, k.email, k.broj_telefona from potrazivanje p join kompanija k on p.kompanija_id=k.id";
                     $result = $konekcija->query($upit);
@@ -60,7 +61,7 @@
                             <td><?php echo $potrazivanje->broj_telefona ?></td>
                             <td>
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DodajPotrazivanje">Dodaj</button>
-                                <button type="button" class="btn btn-primary">Izmeni</button>
+                                <button type="button" class="btn btn-primary" id="btn_izmeni" value="<?php echo $potrazivanje->id ?>">Izmeni</button>
                                 <button type="button" class="btn btn-primary">Obrisi</button>
                             </td>
                         </tr>
@@ -79,9 +80,9 @@
         </div>
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="javascript.js"></script>
 </body>
 
 </html>

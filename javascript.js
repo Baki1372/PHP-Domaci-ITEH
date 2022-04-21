@@ -1,6 +1,7 @@
 $(function () {
     vratiPotrazivanje();
     azuriranjePotrazivanja();
+    obrisiPotrazivanje();
 });
 
 
@@ -51,9 +52,28 @@ function azuriranjePotrazivanja() {
                 KOMPANIJA_ID: kompanija_id,
             },
 
-            success: function (data) {
+            success: function () {
                 alert('Azuriranje uspesno')
             }
         })
     });
+}
+
+
+function obrisiPotrazivanje() {
+
+    $(document).on('click', '#btn_obrisi', function () {
+
+        var id = $(this).attr('value');
+
+        $.ajax({
+            url: 'obrisiPotrazivanje.php',
+            method: 'post',
+            data: { ID: id },
+
+            success: function () {
+                alert('Potrazivanje obrisano')
+            }
+        });
+    })
 }

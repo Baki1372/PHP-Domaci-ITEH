@@ -12,7 +12,7 @@
 
 <body>
 
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-info">
         <div class="container-fluid">
             <a id="ps-meni" class="navbar-brand" href="#">
                 Pretraga / Sortiranje
@@ -62,7 +62,7 @@
                             <td>
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DodajPotrazivanje">Dodaj</button>
                                 <button type="button" class="btn btn-primary" id="btn_izmeni" value="<?php echo $potrazivanje->id ?>">Izmeni</button>
-                                <button type="button" class="btn btn-primary">Obrisi</button>
+                                <button type="button" class="btn btn-primary" id="btn_obrisi" value="<?php echo $potrazivanje->id ?>">Obrisi</button>
                             </td>
                         </tr>
                     <?php } ?>

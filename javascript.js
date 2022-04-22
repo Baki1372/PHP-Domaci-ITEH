@@ -2,6 +2,8 @@ $(function () {
     vratiPotrazivanje();
     azuriranjePotrazivanja();
     obrisiPotrazivanje();
+    $('#tabela-sort').DataTable();
+
 });
 
 
